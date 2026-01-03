@@ -1,6 +1,10 @@
 import { useContext, useRef, useEffect } from "react";
 import { AuthContext } from "../context/AuthContext";
 
+
+
+
+
 export default function Navbar({
   role,
   onFilterType,
