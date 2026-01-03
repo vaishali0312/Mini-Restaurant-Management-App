@@ -12,22 +12,22 @@ export default function AuthProvider({children}){
     const login=(email,password)=>{
         const admin={role:"admin",email:"admin@gmail.com",pwd:"admin1234"};
         const customer={role:"customer",email:"customer@gmail.com",pwd:"customer1234"};
-    };
-    if(email===admin.email && password===admin.pwd){
-        const u={role:admin.role,email:admin.email};
-        setUser(u);
-        localStorage.setItem("authUser",JSON.stringify(u));
-        navigate("/admin/dashboard");
-        alert("Admin logged in successfully");
-    }else if(email===customer.email && password===customer.pwd){
-        const u={role:customer.role,email:customer.email};
-        setUser(u);
-        localStorage.setItem("authUser",JSON.stringify(u));
-        navigate("/customer/dashboard");
-        alert("Customer logged in successfully");
-    }else{
-        alert("Invalid credentials");
-    }   
+        if(email===admin.email && password===admin.pwd){
+            const u={role:admin.role,email:admin.email};
+            setUser(u);
+            localStorage.setItem("authUser",JSON.stringify(u));
+            navigate("/admin/dashboard");
+            alert("Admin logged in successfully");
+        }else if(email===customer.email && password===customer.pwd){
+            const u={role:customer.role,email:customer.email};
+            setUser(u);
+            localStorage.setItem("authUser",JSON.stringify(u));
+            navigate("/customer/dashboard");
+            alert("Customer logged in successfully");
+        }else{
+            alert("Invalid credentials");
+        }
+    };   
 
     const logout=()=>{
         setUser(null);
